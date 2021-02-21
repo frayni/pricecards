@@ -1,0 +1,128 @@
+// Layout
+body {
+    height: 100vh;
+    font-family: $font1;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    align-items: center;
+    background-color: $lightGray;
+}
+.card {
+    // Basic style
+    background-color: white;
+    border-radius: 0.75rem;
+    max-width: 600px;
+    // Css grid to father container
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "header header";
+}
+
+// Sections
+header {
+    grid-area: header;
+    padding: 24px 30px;
+    > h1 {
+        color: $cyan;
+        font-size: 1.5rem;
+        font-family: $font1;
+        font-weight: $weight7;
+    }
+    > h3 {
+        color: $brightYellow;
+        font-weight: $weight7;
+        font-size: 16px;
+        margin: 12px 0;
+    }
+    > p {
+        color: $grayishBlue;
+    }
+}
+.section {
+    &-1{
+        // Base
+        padding: 1.5rem 1.875rem;
+        background-color: $cyan;
+        // Elements
+        > h2 {
+            color: $lightGray;
+            font-weight: $weight7;
+            font-size: 1.25rem;
+        }
+        > h3 {
+            margin: 0.75rem 0;
+            font-size: 2rem;
+            color: $lightGray;
+            font-weight: $weight7;
+            > span {
+                font-size: 1.125rem;
+                color: $lightGray;
+                opacity: 0.8;
+                font-weight: $weight4;
+            }
+        }
+        > p {
+            color: $lightGray;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 1.125rem;
+            padding: 0.75rem 0.75rem;
+            width: 100%;
+            background-color: $brightYellow;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            text-align: center;
+            font-size: 1.125rem;
+            color: $lightGray;
+            font-weight: $weight7;
+            transition-duration: 500ms;
+            &:hover {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+        }
+    }
+    &-2{
+        // Base
+        padding: 1.5rem 1.875rem;
+        background-color: $cyan;
+        opacity: 0.9;
+        // Elements
+        > h2 {
+            color: $lightGray;
+            font-size: 1.25rem;
+            font-weight: $weight7;
+            margin-bottom: 0.5rem;
+        }
+        > p {
+            color: $lightGray;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive
+@media screen and (min-width: $desktop) {
+    body {
+        padding: 20% 25%;
+    }
+}
+@media screen and (max-width: $desktop) {
+    body {
+        padding: 20% 5%;
+    }
+}
+@media screen and (max-width: $mobile) {
+    body {
+        height: 100%;
+        padding: 5%;
+    }
+    .card {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas: "header";
+    }
+};

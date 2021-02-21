@@ -1,0 +1,16 @@
+// Reset document
+* {
+    all: unset;
+    display: revert;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+// Just for importing file
+@import "variables";
+@import "base";
